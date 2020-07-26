@@ -38,12 +38,15 @@ function metaDataInfo(sampleName){
 
         Object.entries(filterResult).forEach(([key, value]) => {
             metaDataPanel.append('h6').text(`${key}:${value}`);
-        })
+        });
 
+        // console.log(filterResult.wfreq)
+        plotGauge(filterResult.wfreq);
 
     });
 
 };
+
 
 
 function plotChart(sampleName){
@@ -108,6 +111,10 @@ function plotChart(sampleName){
         };
 
         Plotly.newPlot('bubble', data, layout);
+
+        // Plotting Gauge Chart --------------------------------------------------
+
+
     });   
 
 };
